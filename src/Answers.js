@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 export default class Answers extends Component {
   render() {
-    const { i, id, answer } = this.props
+    const { id, answer } = this.props
+    
     return (
       <div
         className="Answers">
+
         <label>
           <input
             type="radio"
@@ -14,6 +16,7 @@ export default class Answers extends Component {
           />
           {answer.title}
         </label>
+
       </div>
     );
   }

@@ -21,7 +21,7 @@ export default class App extends Component {
     axios.get('/quizzes')
       .then((response) => {
         this.setState ({
-          quizzes: response.data.quizzes,
+          quizzes: response.data.quizzes[0],
         })
       })
       .catch((error) => {

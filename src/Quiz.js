@@ -8,32 +8,27 @@ export default class Quiz extends Component {
 
     return (
 
-      <div className="quiz-container">
+      <div className="Quiz">
 
-        <header>
-          <h2>{quizzes[0].title}</h2>
-        </header>
+        <h2>
+          {quizzes.title}
+        </h2>
 
-        {quizzes[0].questions.map((question, i) =>
+        {quizzes.questions.map(question =>
           <Questions
             title={question.title}
             answers={question.answers}
             id={question.id}
-            i={i}
           />
         )}
 
-        <input
-          className="submit-button"
-          type="submit"
-          value="submit"
-        />
+        <button>
+          submit
+        </button>
 
-        <input
-          className="submit-button"
-          type="submit"
-          value="clear"
-        />
+        <button>
+          clear
+        </button>
 
       </div>
     );
