@@ -25,10 +25,6 @@ export default class Quiz extends Component {
           submit
         </button>
 
-        <button>
-          clear
-        </button>
-
       </div>
     );
   }
