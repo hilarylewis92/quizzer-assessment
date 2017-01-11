@@ -4,7 +4,7 @@ import Answers from './Answers'
 
 export default class Questions extends Component {
   render() {
-    const { id, title, answers } = this.props
+    const { title, answers } = this.props
 
     return (
       <div
