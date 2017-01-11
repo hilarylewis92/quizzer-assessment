@@ -37,7 +37,7 @@ export default class App extends Component {
         className="App">
 
         {quizzes
-          ? <Quiz quizzes={quizzes} />
+        ? <Quiz quizzes={quizzes} />
         : null}
 
       </div>
