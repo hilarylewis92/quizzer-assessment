@@ -18,7 +18,6 @@ export default class Quiz extends Component {
           <Questions
             title={question.title}
             answers={question.answers}
-            id={question.id}
           />
         )}
 

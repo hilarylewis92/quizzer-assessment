@@ -17,7 +17,6 @@ export default class Questions extends Component {
         {answers.map(answer =>
           <Answers
             answer={answer}
-            id={id}
           />
         )}
 
