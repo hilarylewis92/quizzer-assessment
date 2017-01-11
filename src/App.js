@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Quizzes from './Quizzes'
-
 import './App.css';
 
-class App extends Component {
+import Quiz from './Quiz';
+
+export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      quizzes: [],
+      quizzes: null,
     }
   }
 
@@ -20,7 +20,9 @@ class App extends Component {
   getQuizzes() {
     axios.get('/quizzes')
       .then((response) => {
-        console.log(response);
+        this.setState ({
+          quizzes: response.data.quizzes,
+        })
       })
       .catch((error) => {
         console.log(error);
@@ -28,19 +30,17 @@ class App extends Component {
   }
 
   render() {
+    const { quizzes } = this.state
+
     return (
       <div
         className="App">
 
-        <h2>
-          What JavaScript Error Are You?
-        </h2>
-
-        <Quizzes />
+        {quizzes
+          ? <Quiz quizzes={quizzes} />
+        : null}
 
       </div>
     );
   }
 }
-
-export default App;
