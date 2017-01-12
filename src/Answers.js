@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 export default class Answers extends Component {
   render() {
-    const { answer } = this.props
+    const { answer, handleSelectedAnswers, id } = this.props
+
 
     return (
       <div
@@ -10,6 +11,8 @@ export default class Answers extends Component {
 
         <input
           type="radio"
+          name={id}
+          onClick={(e) => handleSelectedAnswers(e, answer.score)}
         />
         {answer.title}
 

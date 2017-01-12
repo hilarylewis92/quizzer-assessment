@@ -4,7 +4,7 @@ import Answers from './Answers'
 
 export default class Questions extends Component {
   render() {
-    const { title, answers } = this.props
+    const { id, title, answers, handleSelectedAnswers } = this.props
 
     return (
       <div
@@ -17,6 +17,8 @@ export default class Questions extends Component {
         {answers.map(answer =>
           <Answers
             answer={answer}
+            id={id}
+            handleSelectedAnswers={(e, score) => handleSelectedAnswers(e, score)}
           />
         )}
 

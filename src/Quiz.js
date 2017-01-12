@@ -4,7 +4,7 @@ import Questions from './Questions.js'
 export default class Quiz extends Component {
 
   render() {
-    const { quizzes } = this.props
+    const { quizzes, getAnswerScores, answer, handleSelectedAnswers } = this.props
 
     return (
 
@@ -14,14 +14,21 @@ export default class Quiz extends Component {
           {quizzes.title}
         </h2>
 
-        {quizzes.questions.map(question =>
+        {quizzes.questions.map((question, i) =>
           <Questions
             title={question.title}
             answers={question.answers}
+            id={question.id}
+            handleSelectedAnswers={(e, score) => handleSelectedAnswers(e, score, i)}
           />
         )}
 
-        <button>
+        <section>
+          {answer}
+        </section>
+
+        <button
+          onClick={(e) => getAnswerScores(e)}>
           submit
         </button>
 
